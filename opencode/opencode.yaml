@@ -569,10 +569,11 @@ capabilities:
   # verb here would hand a host an operation that can only fail. Add it
   # together with the credential, not before it.
 
-  # No agent-skills@1: neither the v2 spec nor this kit's README ever names a
-  # skills directory for opencode, and this capability is a path declaration.
-  # (The example kit names /home/agent/.config/opencode/skills; that is its
-  # claim to make, not a path this kit has confirmed.)
+  # Ref: <https://opencode.ai/v2/docs/skills/#discovery>
+  - type: com.docker.sandbox/agent-skills@1
+    optional: true
+    config:
+      path: /etc/opencode/skills
 
   # MIGRATION NOTE: v2's agentInstructions declared a profile filename and no
   # body, so there is nothing to stage and no `contentFile:` here. OpenCode
